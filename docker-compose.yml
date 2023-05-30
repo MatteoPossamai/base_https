@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  server:
+    container_name: server
+    build: .
+    command: node index.js
+    volumes:
+      - .:/app
+    ports:
+      - 5000:5000
+
+  webserver:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/www:/var/www/certbot/:ro
