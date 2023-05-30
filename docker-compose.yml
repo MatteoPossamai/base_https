@@ -4,7 +4,7 @@ services:
   server:
     container_name: server
     build: .
-    command: node index.js
+    command: node server/index.js
     volumes:
       - .:/app
     ports:
