@@ -1,0 +1,2 @@
+# Command for renewing certificates
+docker compose run --rm certbot renew
