@@ -1,6 +1,6 @@
 FROM node:12.16.1-alpine
 
-WORKDIR /home/devuser
+WORKDIR ./server
 
 # Installing dependencies
 COPY ./server/package.json ./server/package-lock.json ./
