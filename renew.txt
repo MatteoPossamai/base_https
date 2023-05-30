@@ -9,3 +9,14 @@ https://mindsers.blog/post/https-using-nginx-certbot-docker/
 # correct location is /etc/letsencrypt/live/yourdomain.com/ and not
 # /etc/nginx/ssl/ as it is in the article
 
+# Command for --dry-run creating certificates
+docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d example.org
+
+# Command for creating certificates
+docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d example.org
+
+# Command for creating certificates with email and accepting terms
+docker compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ -d example.org --agree-tos --email
+
+# Command for renewing certificates --dry-run
+docker compose run --rm  certbot renew --dry-run
