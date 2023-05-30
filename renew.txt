@@ -1,2 +1,11 @@
 # Command for renewing certificates
 docker compose run --rm certbot renew
+
+# Here is the article from where all the commands are taken
+https://mindsers.blog/post/https-using-nginx-certbot-docker/
+
+# In the article, in the docker-compose file there is an error 
+# regarding the location of the certificates in the nginx container, the 
+# correct location is /etc/letsencrypt/live/yourdomain.com/ and not
+# /etc/nginx/ssl/ as it is in the article
+
